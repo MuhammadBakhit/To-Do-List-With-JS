@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../img/wallpaper.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#error{
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    padding: 5px 15px;
+    background: #c86c6c45;
+    color: red;
+    border-radius: 20px;
+    cursor: pointer;
+    display: none;
+}
+@media(max-width: 500px){
+    #error{
+        top: 228px;
+        bottom: auto;
+        left: 10px;
+        transform: translate(10%);
+    }
+}
+.container {
+    position: relative;
+    width: 500px;
+    height: auto;
+    min-height: 400px;
+    padding: 30px;
+    border: 2px solid #c0c0c0a1;
+    border-radius: 10px;
+    backdrop-filter: blur(15px);
+}
+@media(max-width: 500px){
+    .container{
+        height: 100%;
+        border: none;
+    }
+}
+h1 {
+    color: #eee;
+    text-align: center;
+    margin-bottom: 36px;
+}
+@media(max-width: 500px){
+    h1{
+        font-size: 60px;
+        margin-top: 45px;
+    }
+}
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+.todo-input {
+    flex: 1;
+    outline: none;
+    padding: 10px 10px 10px 20px;
+    background-color: transparent;
+    border: 2px solid #1b6bff40;
+    border-radius: 30px;
+    color: #eee;
+    font-size: 16px;
+    margin-right: 10px;
+}
+.todo-input::placeholder {
+    color: #bfbfbf;
+}
+.add-button {
+    border: none;
+    outline: none;
+    background-color: #1b6cff;
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+.add-button:hover {
+    background-color: #578ae5;
+}
+.empty-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: -1;
+    opacity: 0.5;
+}
+@media(max-width: 500px){
+    .empty-image {
+        width: 100%;
+    }
+}
+.todo {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr 1fr;
+    align-items: center;
+    padding: 10px 12px;
+    background-color: #4386ff24;
+    border-radius: 20px;
+    margin: 10px 0;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+.todo div{
+    display: flex;
+    align-items: center;
+}
+.todo input[type="checkbox"]{
+    position: relative;
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 1px solid #e1e1e1;
+    cursor: pointer;
+}
+.todo input[type="checkbox"]::before{
+    content: "";
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+.todo input[type="checkbox"]:checked{
+    background-color: #5a95ff;
+    border-color: #5a95ff;
+}
+.todo input[type="checkbox"]:checked::before{
+    content: "\f00c";
+    position: absolute;
+    color: #ffffff;
+    font-size: 0.8em;
+    font-family: "Font Awesome 5 Free";
+    font-size: 13px;
+    font-weight: 900;
+}
+.completed{
+    text-decoration: line-through;
+    color: #a0a0a0 !important;
+}
+.todo .taskname{
+    font-size: 16px;
+    color: #fff;
+    margin-left: 12px;
+    overflow: overlay;
+}
+.todo .taskname::-webkit-scrollbar-track  {
+    background: rgba(229, 229, 229, 0.388);
+    border-radius: 20px;
+}
+.todo .taskname::-webkit-scrollbar  {
+    display: none;
+}
+.todo .taskname:hover::-webkit-scrollbar  {
+    width: 5px;
+    height: 5px;
+    display: block;
+}
+.todo .taskname::-webkit-scrollbar-thumb  {
+    background: #d5d5d5cc;
+    border-radius: 20px;
+}
+.todo .edit-btn  {
+    padding: 5px 6px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    margin-right: 8px;
+    background-color: transparent;
+    color: #eee;
+    cursor: pointer;
+}
+.todo .delete-btn  {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #eee;
+    font-size: 20px;
+}
+.todos-container  {
+    height: 50vh;
+    overflow: overlay;
+}
+.todos-container::-webkit-scrollbar-track  {
+    background: rgb(247, 247, 247);
+    border-radius: 20px
+}
+.todos-container::-webkit-scrollbar  {
+    width: 0;
+}
+.todos-container:hover::-webkit-scrollbar  {
+    width: 7px;
+}
+.todos-container::-webkit-scrollbar-thumb  {
+    background: #d5d5d5;
+    border-radius: 20px;
+}
